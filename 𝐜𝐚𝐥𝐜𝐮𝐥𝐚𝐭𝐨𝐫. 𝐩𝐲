@@ -1,42 +1,36 @@
+ # Simple Python Calculator
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple Calculator</title>
-</head>
-<body>
-    <h2>Simple Calculator</h2>
+def calc():
+    try:
+        a = float(input("First number: "))
+        b = float(input("Second number: "))
+        
+        print("\nChoose operation:")
+        print("1. Add (+)")
+        print("2. Sub (-)")
+        print("3. Mul (*)")
+        print("4. Div (/)")
+        
+        choice = input("Enter choice (+ - * /): ")
+        
+        if choice == '+':
+            print(f"Result: {a + b}")
+        elif choice == '-':
+            print(f"Result: {a - b}")
+        elif choice == '*':
+            print(f"Result: {a * b}")
+        elif choice == '/':
+            if b != 0:
+                print(f"Result: {a / b}")
+            else:
+                print("Cannot divide by zero!")
+        else:
+            print("Invalid choice!")
+            
+    except ValueError:
+        print("Please enter valid numbers!")
 
-    <input type="number" id="a" placeholder="First number">
-    <input type="number" id="b" placeholder="Second number">
-
-    <br><br>
-
-    <button onclick="calc('+')">+</button>
-    <button onclick="calc('-')">-</button>
-    <button onclick="calc('*')">×</button>
-    <button onclick="calc('/')">÷</button>
-
-    <h3 id="result">Result: </h3>
-
-    <script>
-        function calc(op) {
-            let a = Number(document.getElementById("a").value);
-            let b = Number(document.getElementById("b").value);
-            let r;
-
-            if (op === '+') r = a + b;
-            else if (op === '-') r = a - b;
-            else if (op === '*') r = a * b;
-            else if (op === '/') {
-                r = b === 0 ? "Cannot divide by zero" : a / b;
-            }
-
-            document.getElementById("result").innerText =
-                "Result: " + r;
-        }
-    </script>
-</body>
-</html>
+# Run it
+calc()
 
 
