@@ -1,0 +1,34 @@
+# Simple Python Calculator
+
+def calc():
+    try:
+        a = float(input("First number: "))
+        b = float(input("Second number: "))
+        
+        print("\nChoose operation:")
+        print("1. Add (+)")
+        print("2. Sub (-)")
+        print("3. Mul (*)")
+        print("4. Div (/)")
+        
+        choice = input("Enter choice (+ - * /): ")
+        
+        if choice == '+':
+            print(f"Result: {a + b}")
+        elif choice == '-':
+            print(f"Result: {a - b}")
+        elif choice == '*':
+            print(f"Result: {a * b}")
+        elif choice == '/':
+            if b != 0:
+                print(f"Result: {a / b}")
+            else:
+                print("Cannot divide by zero!")
+        else:
+            print("Invalid choice!")
+            
+    except ValueError:
+        print("Please enter valid numbers!")
+
+# Run it
+calc()
